@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sundei – Full-stack web developer</title>
+    <meta name="theme-color" content="#111827">
+    <meta property="og:site_name" content="sundei.de">
+    <link rel='icon' type='image/png' href='/assets/img/iconFlorence.png'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css"
+        ntegrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel='stylesheet' href="/assets/css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    <script>
+        window.onload = function () {
+            twemoji.parse(document.body,
+                { folder: 'svg', ext: '.svg' }
+            );
+        }
+    </script>
+    <style>
+        img.emoji {
+            width: 1em;
+            pointer-events: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body class="animate__animated animate__fadeIn js">
+
+    <div class="navbar padding mt-1 rounded-xl">
+        <a href="/" class="navbar-brand navbar-brand-text"><img id="navbarImage" draggable="false"
+                src="/assets/img/iconWhite.png" alt="IMG" width="45"></a>
+        <div class="navbar-nav">
+        </div>
+        <div class="navbar-nav ms-auto">
+            <div id="navbarButtons">
+                <button id="switchModeButton" class="navbarButton switchModeButton normalText mr-3">
+                    <i class='fa-solid fa-sun-bright'></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section id="head">
+        <div class="padding section">
+            <div class="sectionGrid">
+                <div class="sectionGridItem">
+                    <p class="blackText">I’m <span class="coloredText">sundei</span>. I’m web developer, also GTPS developer.
+                    </p>
+        			<p class="mt-2 animate__animated animate__flash"><span id="weather"><i
+                    	class="fa-regular fa-spinner-third animate-spin text-gray-500 inline-flex ml-1 mr-2"></i>Loading</span>
+       				</p>
+                    <br>
+                    <div id="centeredButton" class="mt-4">
+                        <a href="javascript:openModal(aboutMeModal)" data-toggle="modal" data-target="#aboutMeModal"
+                            class="bigButton normalText rounded-xl opacity-90"><span class="p-4">More
+                                about me</span></a>
+                    </div>
+                </div>
+                <div class="sectionGridItem sectionGridItemRight">
+                    <center>
+                        <img draggable="false" id="headAvatar" src="/assets/img/worldLeader.jpg" alt="IMG"
+                            class="rounded-full" width="160" height="160">
+                    </center>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+    </section>
+
+    <section id="activities">
+        <div class="padding section">
+            <p class="boldText opacity-90">Activities</p>
+            <div id="activitiesGrid" class="mt-3">
+                <p id="activitiesStatus" class="smallText opacity-80"><i
+                        class="fa-light fa-spinner-third animate-spin inline-flex ml-1 mr-2"></i>Loading</p>
+                <div class="grid grid-cols-1 gap-3 sm:gird-cols-1 md:grid-cols-2">
+                    <div id="spotifyListening"></div>
+					<div id="youtubePlaying"></div>
+					<div id="soundcloudListening"></div>
+					<div id="disneyPlusWatching"></div>
+                    <div id="netflixWatching"></div>
+                    <div id="visualStudioCodePlaying"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works">
+        <div class="padding section">
+            <p class="boldText opacity-90">Works</p>
+            <div id="worksGrid" class="mt-3">
+                <div class="grid grid-cols-1 gap-3 sm:gird-cols-1 md:grid-cols-2">
+                    <a href="https://nomikaips.xyz" target="_blank">
+                        <div class="card rounded-xl h-full">
+                            <div class="p-3 flex space-x-2 items-center overflow-hidden">
+                                <img src="/assets/img/gtps.jfif" alt="IMG" class="rounded-xl" width="50" height="50">
+                                <p class="normalText ml-3 opacity-90">GTPS/Nomikai</p>
+                                <p class="thinText sectionTopRightText rounded-xl p-2 opacity-80">Founder &nbsp;•&nbsp;
+                                    2022</p>
+                            </div>
+                            <div class="smallText p-3 cardNoMT opacity-80">The best Private Server in Growtopia.
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.orcsan.eu.org" target="_blank">
+                        <div class="card rounded-xl h-full">
+                            <div class="p-3 flex space-x-2 items-center overflow-hidden">
+                                <img src="/assets/img/iconFlorence.png" alt="IMG" class="rounded-xl" width="50" height="50">
+                                <p class="normalText ml-3 opacity-90">sundei.de</p>
+                                <p class="thinText sectionTopRightText rounded-xl p-2 opacity-80">Coder &nbsp;•&nbsp;
+                                    2022</p>
+                            </div>
+                            <div class="smallText p-3 cardNoMT opacity-80">The website, you are currently at..</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="repositories">
+        <div class="padding section">
+            <p class="boldText opacity-90">Repositories</p>
+            <div id="repositoriesGrid" class="mt-3">
+                <div class="grid grid-cols-1 gap-3 sm:gird-cols-1 md:grid-cols-2">
+                    <div class="githubCard" data-repo="elevenvac/elevenvac.github.io">
+                        <p class="smallText opacity-80"><i
+                                class="fa-light fa-spinner-third animate-spin inline-flex ml-1 mr-2"></i>Loading
+                        </p>
+                    </div>
+                    <div class="githubCard" data-repo="smhman/GrowtopiaMY-VTPS-V5-GTCP"></div>
+                    <div class="githubCard" data-repo="smhman/GTPS3"></div>
+                    <div class="githubCard" data-repo="smhman/INZERNAL"></div>
+                    <div class="githubCard" data-repo="smhman/Musicium"></div>
+                    <div class="githubCard" data-repo="smhman/Milrato-x-Rythm"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="padding section">
+            <p class="boldText opacity-90">Skills</p>
+            <div id="skillsGrid" class="mt-3">
+                <div class="grid grid-cols-2 gap-3 sm:gird-cols-2 md:grid-cols-4">
+                    <a href="https://html.com" target="_blank">
+                        <div class="card rounded-xl h-full">
+                            <div class="p-3 flex space-x-2 items-center overflow-hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#dd4b25"
+                                    class="flex-shrink-0 h-6 w-6">
+                                    <path
+                                        d="M64 32l34.94 403.21L255.77 480 413 435.15 448 32zm308 132H188l4 51h176l-13.51 151.39L256 394.48l-98.68-28-6.78-77.48h48.26l3.42 39.29L256 343.07l53.42-14.92L315 264H148l-12.59-149.59H376.2z" />
+                                </svg>
+                                <p class="normalText ml-3 opacity-80">HTML</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.w3.org/Style/CSS" target="_blank">
+                        <div class="card rounded-xl h-full">
+                            <div class="p-3 flex space-x-2 items-center overflow-hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon flex-shrink-0 h-6 w-6 rounded-lg"
+                                    viewBox="0 0 128 128">
+                                    <path fill="#1572B6"
+                                        d="M18.814 114.123l-10.054-112.771h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z" />
+                                    <path fill="#33A9DC"
+                                        d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z" />
+                                    <path fill="#fff"
+                                        d="M64.001 51.429h18.302l1.264-14.163h-19.566v-13.831h34.681999999999995l-.332 3.711-3.4 38.114h-30.95v-13.831z" />
+                                    <path fill="#EBEBEB"
+                                        d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031h-13.882l1.937 21.717 28.331 7.863.063-.018v-14.39z" />
+                                    <path fill="#fff"
+                                        d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881h-13.876z" />
+                                    <path fill="#EBEBEB"
+                                        d="M64.048 23.435v13.831000000000001h-33.407999999999994l-.277-3.108-.63-7.012-.331-3.711h34.646zM64.001 51.431v13.831000000000001h-15.209l-.277-3.108-.631-7.012-.33-3.711h16.447z" />
+                                </svg>
+                                <p class="normalText ml-3 opacity-80">CSS</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://javascript.com" target="_blank">
+                        <div class="card rounded-xl h-full">
+                            <div class="p-3 flex space-x-2 items-center overflow-hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#EFD81D"
+                                    class="flex-shrink-0 h-6 w-6 rounded-lg">
+                                    <path
+                                        d="M0 0v512h512V0H0zm274.286 397.714c0 49.84-29.44 74.137-72.057 74.137-38.492 0-60.835-19.931-72.172-43.988l39.177-23.714c7.555 13.405 13.292 24.742 29.783 24.742 13.714 0 24.983-6.182 24.983-30.24V237.714h50.286v160zm113.543 72.995c-44.675 0-73.543-20.16-87.635-48L339.429 400c10.285 16.846 23.714 28.069 47.428 28.069 19.932 0 31.509-8.823 31.509-22.572 0-16.491-11.92-22.331-33.92-32l-12.023-5.166c-34.72-14.765-57.737-33.325-57.737-72.514 0-36.08 27.485-62.434 70.445-62.434 30.595 0 52.572 9.508 68.4 37.348L416 294.857c-8.251-14.777-17.143-20.571-30.926-20.571-14.091 0-23.028 8.937-23.028 20.571 0 14.434 8.937 20.274 29.554 29.212l12.023 5.154c40.903 17.531 63.931 35.428 63.931 75.611.012 43.315-34.011 65.875-79.725 65.875z" />
+                                </svg>
+                                <p class="normalText ml-3 opacity-80">JavaScript</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://nodejs.org" target="_blank">
+                        <div class="card rounded-xl h-full">
+                            <div class="p-3 flex space-x-2 items-center overflow-hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="#6FA660" viewBox="0 0 512 512"
+                                    class="flex-shrink-0 h-6 w-6 rounded-lg">
+                                    <path
+                                        d="M429.76 130.07L274.33 36.85a37 37 0 00-36.65 0L82.24 130.06A38.2 38.2 0 0064 162.83V349a38.26 38.26 0 0018.24 32.8L123 406.14l.23.13c20.58 10.53 28.46 10.53 37.59 10.53 32.14 0 52.11-20.8 52.11-54.29V182a8.51 8.51 0 00-8.42-8.58h-22.38a8.51 8.51 0 00-8.42 8.58v180.51a15 15 0 01-6.85 13.07c-5.9 3.6-14.47 2.84-24.14-2.15l-39.06-23.51a1.1 1.1 0 01-.48-.92V165.46a1.32 1.32 0 01.59-1.06l151.84-93a.82.82 0 01.73 0l151.93 93a1.34 1.34 0 01.55 1.1V349a1.28 1.28 0 01-.45 1l-152.06 90.65a1.22 1.22 0 01-.8 0l-38.83-23.06a7.8 7.8 0 00-7.83-.41l-.34.2c-10.72 6.35-13.6 8-23.54 11.62-1.62.59-5.43 2-5.76 5.77s3.29 6.45 6.51 8.32l51.9 31.87a35.67 35.67 0 0018.3 5.07h.58a35.87 35.87 0 0017.83-5.07l155.43-93.13A38.37 38.37 0 00448 349V162.83a38.21 38.21 0 00-18.24-32.76z" />
+                                    <path
+                                        d="M307.88 318.05c-37.29 0-45.24-10.42-47.6-27.24a8.43 8.43 0 00-8.22-7.32h-19.8a8.44 8.44 0 00-8.26 8.58c0 14.58 5.12 62.17 83.92 62.17 24.38 0 44.66-5.7 58.63-16.49S388 311.26 388 292.55c0-37.55-24.5-47.83-72.75-54.55-49.05-6.82-49.05-10.29-49.05-17.89 0-5.47 0-18.28 35.46-18.28 25.23 0 38.74 3.19 43.06 20a8.35 8.35 0 008.06 6.67h19.87a8.24 8.24 0 006.16-2.86 8.91 8.91 0 002.12-6.44c-2.57-35.55-28.56-53.58-79.24-53.58-46.06 0-73.55 20.75-73.55 55.5 0 38.1 28.49 48.87 71.29 53.33 50 5.17 50 12.71 50 19.37.03 10.38-4.28 24.23-41.55 24.23z" />
+                                </svg>
+                                <p class="normalText ml-3 opacity-80">Node.js</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://mongodb.com" target="_blank">
+                        <div class="card rounded-xl h-full">
+                            <div class="p-3 flex space-x-2 items-center overflow-hidden">
+                                <svg class="flex-shrink-0 h-6 w-6 rounded-lg" xmlns="http://www.w3.org/2000/svg"
+                                    enable-background="new 0 0 24 24" viewBox="0 0 24 24">
+                                    <path fill="#FFF"
+                                        d="M12.546,24l-0.639-0.218c0,0,0.078-3.257-1.091-3.491c-0.779-0.904,0.125-38.338,2.93-0.125c0,0-0.966,0.483-1.138,1.309C12.422,22.286,12.546,24,12.546,24L12.546,24z" />
+                                    <path fill="#A6A385"
+                                        d="M12.546,24l-0.639-0.218c0,0,0.078-3.257-1.091-3.491c-0.779-0.904,0.125-38.338,2.93-0.125c0,0-0.966,0.483-1.138,1.309C12.422,22.286,12.546,24,12.546,24L12.546,24z" />
+                                    <path fill="#FFF"
+                                        d="M12.889,20.852c0,0,5.595-3.678,4.286-11.33c-1.262-5.563-4.239-7.387-4.566-8.088c-0.358-0.499-0.701-1.371-0.701-1.371l0.234,15.475C12.141,15.553,11.658,20.275,12.889,20.852L12.889,20.852z" />
+                                    <path fill="#499D4A"
+                                        d="M12.889,20.852c0,0,5.595-3.678,4.286-11.33c-1.262-5.563-4.239-7.387-4.566-8.088c-0.358-0.499-0.701-1.371-0.701-1.371l0.234,15.475C12.141,15.553,11.658,20.275,12.889,20.852L12.889,20.852z" />
+                                    <path fill="#FFF"
+                                        d="M11.58,21.054c0,0-5.252-3.584-4.94-9.896c0.296-6.312,4.005-9.413,4.722-9.974C11.83,0.686,11.845,0.499,11.876,0c0.327,0.701,0.265,10.488,0.312,11.641C12.328,16.083,11.939,20.213,11.58,21.054z" />
+                                    <path fill="#58AA50"
+                                        d="M11.58,21.054c0,0-5.252-3.584-4.94-9.896c0.296-6.312,4.005-9.413,4.722-9.974C11.83,0.686,11.845,0.499,11.876,0c0.327,0.701,0.265,10.488,0.312,11.641C12.328,16.083,11.939,20.213,11.58,21.054z" />
+                                </svg>
+                                <p class="normalText ml-3 opacity-80">MongoDB</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="hhttps://www.adobe.com/tr/products/photoshop.html" target="_blank">
+                        <div class="card rounded-xl h-full">
+                            <div class="p-3 flex space-x-2 items-center overflow-hidden">
+                                <svg class="h-6 w-6 rounded-lg" version="1.1" id="Layer_1"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    x="0px" y="0px" viewBox="0 0 240 234" style="enable-background:new 0 0 240 234;"
+                                    xml:space="preserve">
+                                    <g id="Layer_2_1_">
+                                        <g id="Surfaces">
+                                            <g id="Photo_Surface">
+                                                <g id="Outline_no_shadow">
+                                                    <path class="st0" fill="#001E36" d="M42.5,0h155C221,0,240,19,240,42.5v149c0,23.5-19,42.5-42.5,42.5h-155C19,234,0,215,0,191.5v-149
+					C0,19,19,0,42.5,0z" />
+                                                </g>
+                                            </g>
+                                        </g>
+                                        <g id="Outlined_Mnemonics_Logos">
+                                            <g id="Ps">
+                                                <path class="st1" fill="#31A8FF" d="M54,164.1V61.2c0-0.7,0.3-1.1,1-1.1c1.7,0,3.3,0,5.6-0.1c2.4-0.1,4.9-0.1,7.6-0.2c2.7-0.1,5.6-0.1,8.7-0.2
+				c3.1-0.1,6.1-0.1,9.1-0.1c8.2,0,15,1,20.6,3.1c5,1.7,9.6,4.5,13.4,8.2c3.2,3.2,5.7,7.1,7.3,11.4c1.5,4.2,2.3,8.5,2.3,13
+				c0,8.6-2,15.7-6,21.3c-4,5.6-9.6,9.8-16.1,12.2c-6.8,2.5-14.3,3.4-22.5,3.4c-2.4,0-4,0-5-0.1c-1-0.1-2.4-0.1-4.3-0.1v32.1
+				c0.1,0.7-0.4,1.3-1.1,1.4c-0.1,0-0.2,0-0.4,0H55.2C54.4,165.4,54,165,54,164.1z M75.8,79.4V113c1.4,0.1,2.7,0.2,3.9,0.2H85
+				c3.9,0,7.8-0.6,11.5-1.8c3.2-0.9,6-2.8,8.2-5.3c2.1-2.5,3.1-5.9,3.1-10.3c0.1-3.1-0.7-6.2-2.3-8.9c-1.7-2.6-4.1-4.6-7-5.7
+				c-3.7-1.5-7.7-2.1-11.8-2c-2.6,0-4.9,0-6.8,0.1C77.9,79.2,76.5,79.3,75.8,79.4L75.8,79.4z" />
+                                                <path class="st1" fill="#31A8FF" d="M192,106.9c-3-1.6-6.2-2.7-9.6-3.4c-3.7-0.8-7.4-1.3-11.2-1.3c-2-0.1-4.1,0.2-6,0.7c-1.3,0.3-2.4,1-3.1,2
+				c-0.5,0.8-0.8,1.8-0.8,2.7c0,0.9,0.4,1.8,1,2.6c0.9,1.1,2.1,2,3.4,2.7c2.3,1.2,4.7,2.3,7.1,3.3c5.4,1.8,10.6,4.3,15.4,7.3
+				c3.3,2.1,6,4.9,7.9,8.3c1.6,3.2,2.4,6.7,2.3,10.3c0.1,4.7-1.3,9.4-3.9,13.3c-2.8,4-6.7,7.1-11.2,8.9c-4.9,2.1-10.9,3.2-18.1,3.2
+				c-4.6,0-9.1-0.4-13.6-1.3c-3.5-0.6-7-1.7-10.2-3.2c-0.7-0.4-1.2-1.1-1.1-1.9v-17.4c0-0.3,0.1-0.7,0.4-0.9
+				c0.3-0.2,0.6-0.1,0.9,0.1c3.9,2.3,8,3.9,12.4,4.9c3.8,1,7.8,1.5,11.8,1.5c3.8,0,6.5-0.5,8.3-1.4c1.6-0.7,2.7-2.4,2.7-4.2
+				c0-1.4-0.8-2.7-2.4-4c-1.6-1.3-4.9-2.8-9.8-4.7c-5.1-1.8-9.8-4.2-14.2-7.2c-3.1-2.2-5.7-5.1-7.6-8.5c-1.6-3.2-2.4-6.7-2.3-10.2
+				c0-4.3,1.2-8.4,3.4-12.1c2.5-4,6.2-7.2,10.5-9.2c4.7-2.4,10.6-3.5,17.7-3.5c4.1,0,8.3,0.3,12.4,0.9c3,0.4,5.9,1.2,8.6,2.3
+				c0.4,0.1,0.8,0.5,1,0.9c0.1,0.4,0.2,0.8,0.2,1.2v16.3c0,0.4-0.2,0.8-0.5,1C192.9,107.1,192.4,107.1,192,106.9z" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <p class="normalText ml-3 opacity-80">Photoshop</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://code.visualstudio.com" target="_blank">
+                        <div class="card rounded-xl h-full">
+                            <div class="p-3 flex space-x-2 items-center overflow-hidden">
+                                <svg class="h-6 w-6 rounded-lg" viewBox="-11.9 -2 1003.9 995.6"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="m12.1 353.9s-24-17.3 4.8-40.4l67.1-60s19.2-20.2 39.5-2.6l619.2 468.8v224.8s-.3 35.3-45.6 31.4z"
+                                        fill="#2489ca" />
+                                    <path
+                                        d="m171.7 498.8-159.6 145.1s-16.4 12.2 0 34l74.1 67.4s17.6 18.9 43.6-2.6l169.2-128.3z"
+                                        fill="#1070b3" />
+                                    <path d="m451.9 500 292.7-223.5-1.9-223.6s-12.5-48.8-54.2-23.4l-389.5 354.5z"
+                                        fill="#0877b9" />
+                                    <path
+                                        d="m697.1 976.2c17 17.4 37.6 11.7 37.6 11.7l228.1-112.4c29.2-19.9 25.1-44.6 25.1-44.6v-671.2c0-29.5-30.2-39.7-30.2-39.7l-197.7-95.3c-43.2-26.7-71.5 4.8-71.5 4.8s36.4-26.2 54.2 23.4v887.5c0 6.1-1.3 12.1-3.9 17.5-5.2 10.5-16.5 20.3-43.6 16.2z"
+                                        fill="#3c99d4" />
+                                </svg>
+                                <p class="normalText ml-3 opacity-80">VS Code</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer">
+        <div class="footer section padding">
+            <div class="footerLeft">
+                <span class="normalText textCard rounded-xl mr-1 opacity-80">v5</span>
+                <span class="normalText opacity-80">sundei</span>
+            </div>
+            <div class="footerRight mt-2 sm:mt-0">
+                <p class="smallText opacity-80"><a href="https://github.com/elevenvac/elevenvac.github.io"
+                        target="_blank" class="naturalLink">Open Source</a></p>
+            </div>
+        </div>
+    </section>
+
+    <button onclick="topFunction()" id="goTop" class="normalText transition-shadow  opacity-90">
+        <i class="fa-regular fa-chevron-up"></i>
+    </button>
+
+    <div class="modal fade" id="aboutMeModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content rounded-xl">
+                <div class="modal-body">
+                    <a href="javascript:closeModal(aboutMeModal)" data-dismiss="modal">
+                        <p class="thinText sectionTopRightText rounded-xl p-2 opacity-80">Close Modal</p>
+                    </a>
+                    <div id="inModal" class="p-3 mt-1 mb-1 space-x-2">
+                        <center>
+                            <div id="aboutMeModalAvatarContainer">
+                                <img draggable="false" id="aboutMeModalAvatar" src="/assets/img/niceAvatar.png" alt="IMG"
+                            class="rounded-full" width="140" height="140">
+                                <div id="discordStatus">
+                                    <div class="discordStatusOffline"></div>
+                                </div>
+                            </div>
+                            <p class="boldText opacity-90 mt-4">sundei</p>
+                            <p id="dateActivity" class="normalText opacity-80 mt-2"><i
+                                    class="fa-light fa-spinner-third animate-spin inline-flex ml-1 mr-2"></i>Loading</p>
+                        </center>
+                        <p class="normalText opacity-80 mt-4">I am sundei. A self taught
+                            developer based in Estonia.</p>
+                        <p class="normalText opacity-80 mt-4">I am passionate about design and technology so I always try to
+                            craft great-looking products.</p>
+                        <p class="normalText opacity-80 mt-4">When not coding, I like to watch TV shows and movies, play
+                            some games with friends or hang out with them. I'm also listening to music most of the time.</p>
+                        <p class="normalText opacity-80 mt-4">I consider myself a curious and inquisitive person, so on my
+                            spare time I like to work on side projects, try to contribute to open source software and aim to
+                            constantly learn something new to improve my skillset.</p>
+                        <p class="normalText opacity-80 mt-4">And last but not least, please don't hesitate to contact me!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="/assets/js/lanyard.js"></script>
+<script src='/assets/js/goTop.js'></script>
+<script src="/assets/js/tippy.js"></script>
+<script src="/assets/js/githubRepositories.js"></script>
+<script src="/assets/js/darkMode.js"></script>
+<script src="/assets/js/dateActivity.js"></script>
+<script src="/assets/js/weather.js"></script>
+
+</html>
